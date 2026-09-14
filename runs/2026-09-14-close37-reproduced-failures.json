@@ -1,0 +1,312 @@
+{
+  "repairBatch": {
+    "runId": "2026-09-14-merged-deployed-repair",
+    "state": "MERGED AND LIVE — targeted cloud verification progressing",
+    "executionMode": "cloud",
+    "browser": "Google Chrome",
+    "sizes": [
+      "360×800",
+      "390×844",
+      "768×1024",
+      "1024×768",
+      "1280×800",
+      "1440×900"
+    ],
+    "mergeStatus": "MERGED",
+    "deploymentStatus": "LIVE",
+    "cloudRetestStatus": "PARTIAL",
+    "frontendTests": "Final candidate: 632 suites / 4,943 tests passed; production build passed. Final original-refund real-API Chrome check passed at all six exact sizes.",
+    "apiTests": "Prior complete reconciliation: 468 suites / 5,565 assertions passed; latest API base and refund delta: 5 suites / 82 assertions passed. Separate runs, not one new full-suite execution.",
+    "scope": "Readiness update only. Existing deployed findings and per-size results below remain the last published cloud outcomes until exact-release browser retesting is supplied.",
+    "findings": [
+      {
+        "id": "GRT003-VALID-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      },
+      {
+        "id": "GRT005-CFG-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Original draft workflow blocked at measured 360x800: Actions bounds left349/right413 extend past viewport width360 and clipped parent prevents opening menu; no menu appears after click. October13 date retained after one save/reload, but mobile editor cannot be reopened, so configuration acceptance remains failed. One shared header defect affects GRT005 and ADM053-CFG; other five cells not executed.",
+        "cloudRetestStatus": "FAIL"
+      },
+      {
+        "id": "GRT011-CLOSED-001",
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "Original closed grant fresh reload at all six exact CSS sizes shows disabled Applications Closed and no application dialog for guest and normally signed-in nonowner Investor, using Pitcher Chrome. Main reviewed six guest images; register agent reviewed six nonowner images. Targeted original closed-Apply defect only, not contribution or full grant lifecycle certification.",
+        "cloudRetestStatus": "PASS"
+      },
+      {
+        "id": "GRT020-BAL-001",
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "GRT020-BAL-001 PASS: original terminated grant shows its existing USD -1 refund, USD +1 contribution and zero available/current balance after reload. Six exact measured Chrome CSS viewports passed. No fresh financial transaction was executed; other cloud retests are pending.",
+        "cloudRetestStatus": "PASS"
+      },
+      {
+        "id": "GRT021-REPORT-001",
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "Original owned closed grant Details and Overview exercised at all six measured CSS sizes. Fresh scrolled screenshots show Tracking Enabled No / Reporting Required No / Settings Inactive agreeing with Reporting disabled / No recurring reporting obligations. Old cadence-current absent. All twelve visible reporting screenshots independently visually reviewed. Targeted original reporting contradiction PASS, not financial reconciliation or full grant suite.",
+        "cloudRetestStatus": "PASS"
+      }
+    ],
+    "updatedAt": "2026-09-14T21:24:37.042Z",
+    "candidates": {
+      "webapp": "b99da21cf757593a3f5419086022556b7965e9b3",
+      "webapi": "f11aba9330b84ee98e0e7f3188a2442b928e4aad"
+    },
+    "pullRequests": [
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/pull/2342",
+        "label": "Frontend PR #2342 — merged"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/pull/737",
+        "label": "API PR #737 — merged after review corrections"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/actions/runs/34880983295",
+        "label": "Frontend live promotion — success"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/actions/runs/34880842679",
+        "label": "API live promotion — success"
+      }
+    ],
+    "releaseGate": "Recorded merge commits are live. Cloud closure below is limited to explicit targeted results with six measured CSS viewport outcomes; merged code alone never closes other findings.",
+    "mergeCommits": {
+      "webapp": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "webapi": "a86720f026956fa9a9e76e3f4bb23e5e02af445d"
+    },
+    "stagedDeployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "workflow": "34878846169",
+        "status": "SUCCESS"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "workflow": "34880209047",
+        "status": "SUCCESS",
+        "policyParityMatched": true
+      }
+    },
+    "apiReviewDelta": "Final review corrections: 44 controller assertions and 66 organization assertions passed; three required API checks passed and zero unresolved review threads.",
+    "deployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "promotionRun": "34880983295",
+        "status": "LIVE"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "promotionRun": "34880842679",
+        "status": "LIVE"
+      },
+      "buildId": "yU2MSQuhYYpfh4uHJUpxd",
+      "verifiedBy": "/root"
+    },
+    "cloudRetestSummary": "Latest targeted batch 2026-09-14-close37-reproduced-failures: GRT005-CFG-001 FAIL, GRT017-REC-001 FAIL. Other findings retain prior evidence; this is not full-scenario closure."
+  },
+  "findings": [
+    {
+      "id": "GRT005-CFG-001",
+      "title": "Saved grant configuration changes on reload",
+      "status": "FAIL",
+      "summary": "Original draft workflow blocked at measured 360x800: Actions bounds left349/right413 extend past viewport width360 and clipped parent prevents opening menu; no menu appears after click. October13 date retained after one save/reload, but mobile editor cannot be reopened, so configuration acceptance remains failed. One shared header defect affects GRT005 and ADM053-CFG; other five cells not executed.",
+      "steps": [
+        "Save original draft at 360 CSS pixels",
+        "Reload and observe October13 retained",
+        "Attempt Actions to reopen editor",
+        "Observe Actions clipped left349/right413 and no menu after click"
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "measuredCss": "360x800",
+          "status": "FAIL",
+          "summary": "Save original draft at 360 CSS pixels; Reload and observe October13 retained; Attempt Actions to reopen editor; Observe Actions clipped left349/right413 and no menu after click. FAIL; main visually reviewed clipped Actions",
+          "steps": [
+            "Save original draft at 360 CSS pixels",
+            "Reload and observe October13 retained",
+            "Attempt Actions to reopen editor",
+            "Observe Actions clipped left349/right413 and no menu after click"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-reproduced-failures/GRT005-actions-clipped-360x800.png",
+              "label": "GRT005-actions-clipped-360x800"
+            }
+          ],
+          "observedAt": "2026-09-14T20:12:46.815Z"
+        },
+        {
+          "size": "390×844",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "768×1024",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "1024×768",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "1280×800",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "1440×900",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "assets/2026-09-14-close37-reproduced-failures/GRT005-actions-clipped-360x800.png",
+          "label": "GRT005-actions-clipped-360x800"
+        }
+      ],
+      "evidencePublication": "APPROVED_PUBLIC_EVIDENCE",
+      "limitations": "Fresh deployed evidence only. Unexecuted cells remain NOT RUN; local functional repairs are not deployed acceptance. Screenshot corroborates clipped layout; measured bounds349..413 and failed normal click establish inaccessible Actions. Other five sizes unexecuted.",
+      "sourceRun": "2026-09-14-close37-reproduced-failures",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT017-REC-001",
+      "title": "Award receipt reverses sender and recipient",
+      "status": "FAIL",
+      "summary": "Fresh original grant Wallet disbursement receipt at exact1440x900: reference6a9628cdcae07bfa04bc4127 / CIC-7BFA04BC4127 shows grant sender but Recipient N/A, despite table counterparty CIC Investor. Gross/net USD100 and zero fees. Main visually reviewed screenshot. Owner/recipient same-award reconciliation fails; other five cells not executed before repair.",
+      "steps": [
+        "Open original grant Wallet disbursement",
+        "Open Receipt CIC-7BFA04BC4127",
+        "Compare counterparty CIC Investor with receipt Recipient N/A"
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "390×844",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "768×1024",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "1024×768",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "1280×800",
+          "measuredCss": null,
+          "status": "NOT RUN",
+          "summary": "Not executed in this fresh cloud run; earlier evidence retained in immutable prior snapshot.",
+          "steps": [],
+          "evidence": [],
+          "observedAt": null
+        },
+        {
+          "size": "1440×900",
+          "measuredCss": "1440x900",
+          "status": "FAIL",
+          "summary": "Open original grant Wallet disbursement; Open Receipt CIC-7BFA04BC4127; Compare counterparty CIC Investor with receipt Recipient N/A. FAIL main visually reviewed missing recipient",
+          "steps": [
+            "Open original grant Wallet disbursement",
+            "Open Receipt CIC-7BFA04BC4127",
+            "Compare counterparty CIC Investor with receipt Recipient N/A"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-reproduced-failures/GRT017-owner-recipient-missing-1440x900.png",
+              "label": "GRT017-owner-recipient-missing-1440x900"
+            }
+          ],
+          "observedAt": "2026-09-14T20:21:32.508Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "assets/2026-09-14-close37-reproduced-failures/GRT017-owner-recipient-missing-1440x900.png",
+          "label": "GRT017-owner-recipient-missing-1440x900"
+        }
+      ],
+      "evidencePublication": "APPROVED_PUBLIC_EVIDENCE",
+      "limitations": "Fresh deployed evidence only. Unexecuted cells remain NOT RUN; local functional repairs are not deployed acceptance. Original owner-side receipt failure at1440 only; other five sizes unexecuted.",
+      "sourceRun": "2026-09-14-close37-reproduced-failures",
+      "resultSource": "receipt-results.json"
+    }
+  ],
+  "browser": "Google Chrome",
+  "frontend": "https://planar-truck-361704.uc.r.appspot.com",
+  "api": "https://cicdevapi.uc.r.appspot.com",
+  "runId": "2026-09-14-close37-reproduced-failures",
+  "state": "RETEST PARTIAL — completed targeted batch published; remaining findings retain their latest recorded outcomes",
+  "updatedAt": "2026-09-14T21:24:37.042Z",
+  "scope": "Chrome-only targeted defect acceptance on the recorded deployed versions. New results are limited to explicitly supplied findings and six measured CSS sizes. Historical scenarios and unexecuted lifecycle branches are not promoted to PASS.",
+  "deployments": {
+    "webapp": {
+      "version": "auth-34878846169-1",
+      "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "promotionRun": "34880983295",
+      "status": "LIVE"
+    },
+    "webapi": {
+      "version": "policy-34880209047-1",
+      "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+      "promotionRun": "34880842679",
+      "status": "LIVE"
+    }
+  }
+}
