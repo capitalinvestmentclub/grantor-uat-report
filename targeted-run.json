@@ -1,7 +1,7 @@
 {
   "repairBatch": {
-    "runId": "2026-09-14-confirmed-failure-repair",
-    "state": "LOCAL VERIFIED — independent review approval required; not merged or deployed",
+    "runId": "2026-09-14-merged-deployed-repair",
+    "state": "MERGED AND LIVE — one targeted cloud refund retest passed; remaining cloud retests pending",
     "executionMode": "real-api-local",
     "browser": "Google Chrome",
     "sizes": [
@@ -12,9 +12,9 @@
       "1280×800",
       "1440×900"
     ],
-    "mergeStatus": "REVIEW_APPROVAL_REQUIRED",
-    "deploymentStatus": "PENDING",
-    "cloudRetestStatus": "PENDING",
+    "mergeStatus": "MERGED",
+    "deploymentStatus": "LIVE",
+    "cloudRetestStatus": "PARTIAL",
     "frontendTests": "Final candidate: 632 suites / 4,943 tests passed; production build passed. Final original-refund real-API Chrome check passed at all six exact sizes.",
     "apiTests": "Prior complete reconciliation: 468 suites / 5,565 assertions passed; latest API base and refund delta: 5 suites / 82 assertions passed. Separate runs, not one new full-suite execution.",
     "scope": "Readiness update only. Existing deployed findings and per-size results below remain the last published cloud outcomes until exact-release browser retesting is supplied.",
@@ -39,9 +39,9 @@
       },
       {
         "id": "GRT020-BAL-001",
-        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
-        "summary": "Existing successful refund is now displayed through a protected read-only endpoint. Zero wallet balance and the recorded USD 1 refund reconcile; no new payment or invented historical balance.",
-        "cloudRetestStatus": "PENDING"
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "GRT020-BAL-001 PASS: original terminated grant shows its existing USD -1 refund, USD +1 contribution and zero available/current balance after reload. Six exact measured Chrome CSS viewports passed. No fresh financial transaction was executed; other cloud retests are pending.",
+        "cloudRetestStatus": "PASS"
       },
       {
         "id": "GRT021-REPORT-001",
@@ -50,22 +50,65 @@
         "cloudRetestStatus": "PENDING"
       }
     ],
-    "updatedAt": "2026-09-14T16:38:05.179Z",
+    "updatedAt": "2026-09-14T18:36:19.144Z",
     "candidates": {
       "webapp": "b99da21cf757593a3f5419086022556b7965e9b3",
-      "webapi": "5cad07e01717ba8d8e83168caca0aa4fdf064257"
+      "webapi": "f11aba9330b84ee98e0e7f3188a2442b928e4aad"
     },
     "pullRequests": [
       {
         "url": "https://github.com/capitalinvestmentclub/webapp/pull/2342",
-        "label": "Frontend PR #2342 — checks running; independent review required"
+        "label": "Frontend PR #2342 — merged"
       },
       {
         "url": "https://github.com/capitalinvestmentclub/webapi/pull/737",
-        "label": "API PR #737 — required checks passed; independent review required"
+        "label": "API PR #737 — merged after review corrections"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/actions/runs/34880983295",
+        "label": "Frontend live promotion — success"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/actions/runs/34880842679",
+        "label": "API live promotion — success"
       }
     ],
-    "releaseGate": "API normal merge denied by required independent approval. Frontend required checks still running at this update. Neither candidate is a deployed version. Prior cloud outcomes remain unchanged."
+    "releaseGate": "Both exact merge commits are promoted live; promotion workflows succeeded. User-authorized approval-only override was used after required checks and concrete review corrections passed. New Chrome cloud acceptance is limited to GRT020-BAL-001 at all six measured sizes. Other prior cloud results remain unchanged; merged code alone does not close their findings.",
+    "mergeCommits": {
+      "webapp": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "webapi": "a86720f026956fa9a9e76e3f4bb23e5e02af445d"
+    },
+    "stagedDeployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "workflow": "34878846169",
+        "status": "SUCCESS"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "workflow": "34880209047",
+        "status": "SUCCESS",
+        "policyParityMatched": true
+      }
+    },
+    "apiReviewDelta": "Final review corrections: 44 controller assertions and 66 organization assertions passed; three required API checks passed and zero unresolved review threads.",
+    "deployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "promotionRun": "34880983295",
+        "status": "LIVE"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "promotionRun": "34880842679",
+        "status": "LIVE"
+      }
+    },
+    "cloudRetestSummary": "GRT020-BAL-001 PASS: original terminated grant shows its existing USD -1 refund, USD +1 contribution and zero available/current balance after reload. Six exact measured Chrome CSS viewports passed. No fresh financial transaction was executed; other cloud retests are pending."
   },
   "findings": [
     {
@@ -438,63 +481,113 @@
     {
       "id": "GRT020-BAL-001",
       "title": "Refunded terminated grant retains a nonzero balance",
-      "status": "FAIL",
-      "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+      "status": "PASS",
+      "summary": "On the exact merged and live release, the original terminated grant wallet displays its existing successful USD -1 refund alongside USD +1 contribution, with current and available balance zero. The refund remains visible after full reload and reopening Wallet. Missing historical running balances are explicitly unavailable. Actual Chrome readback and visual review passed at all six measured CSS viewports.",
       "steps": [
-        "Read documented alias credentials from local private fixture mapping without printing secrets.",
-        "Signed out Investor normally on isolated Assessor Chrome profile, leaving main Pitcher profile untouched.",
-        "Submitted existing documented owner credentials through normal deployed login form.",
-        "Application displayed Enter your email verification code, with Verify and Request a new code controls.",
-        "Captured actual MFA blocker, then completed normal verification using fresh mailbox verification provided by main agent. Verification code not retained in artifacts.",
-        "Opened Manage Grants > Terminated > owned PIT035 Typed Applicant Validation 20260911 > Applications (1), and expanded the synthetic application.",
-        "Observed every configured original question and answer: URL https://example.com/pit035; single choice Research, development & testing; multichoice Training, mentoring, Café 冷链 delivery; long text beginning PIT035 synthetic long response. Café 冷链 and ending END-PIT035-LONG.",
-        "Inspected all six Chrome sizes, saving and reviewing answer-heading and long-answer screenshots at each size. The application is not missing its four configured answer families. Narrow table content requires horizontal scrolling; long response clips at right edge at 360/390/768 in the default horizontal position.",
-        "Opened owner Grant Wallet and revealed controlled balance: Available USD1.00, Current USD1.00, pending disbursements0; only creator contribution +USD1.00, running balance USD1.00. No refund/release row. Header remains Grant Terminated.",
-        "Saved and visually inspected six wallet screenshots. Cleared viewport override, reloaded grant, reopened Wallet, and confirmed terminal status plus sole contribution/running balance USD1.00 persist."
+        "Sign in normally as the controlled Pitcher using the Pitcher Chrome profile on the deployed app.",
+        "Open the original controlled PIT035 terminated grant and its Wallet; reveal its balance.",
+        "Verify the existing refund debit USD -1, contribution USD +1 and current/available balance zero. No new transaction is submitted.",
+        "Read and visually inspect the refund row at all six measured CSS viewport dimensions.",
+        "Reload the deployed app and reopen Wallet; verify the existing refund and zero balance persist."
       ],
       "responsive": [
         {
           "size": "360×800",
-          "status": "FAIL",
-          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
-          "evidence": []
+          "status": "PASS",
+          "summary": "Actual measured 360×800 Chrome CSS viewport: recorded USD -1 refund, USD +1 contribution and zero current/available balance visible; screenshot visually reviewed.",
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-merged-refund/360x800.png",
+              "label": "Cloud refund readback — 360×800 measured CSS viewport"
+            }
+          ]
         },
         {
           "size": "390×844",
-          "status": "FAIL",
-          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
-          "evidence": []
+          "status": "PASS",
+          "summary": "Actual measured 390×844 Chrome CSS viewport: recorded USD -1 refund, USD +1 contribution and zero current/available balance visible; screenshot visually reviewed.",
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-merged-refund/390x844.png",
+              "label": "Cloud refund readback — 390×844 measured CSS viewport"
+            }
+          ]
         },
         {
           "size": "768×1024",
-          "status": "FAIL",
-          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
-          "evidence": []
+          "status": "PASS",
+          "summary": "Actual measured 768×1024 Chrome CSS viewport: recorded USD -1 refund, USD +1 contribution and zero current/available balance visible; screenshot visually reviewed.",
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-merged-refund/768x1024.png",
+              "label": "Cloud refund readback — 768×1024 measured CSS viewport"
+            }
+          ]
         },
         {
           "size": "1024×768",
-          "status": "FAIL",
-          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
-          "evidence": []
+          "status": "PASS",
+          "summary": "Actual measured 1024×768 Chrome CSS viewport: recorded USD -1 refund, USD +1 contribution and zero current/available balance visible; screenshot visually reviewed.",
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-merged-refund/1024x768.png",
+              "label": "Cloud refund readback — 1024×768 measured CSS viewport"
+            }
+          ]
         },
         {
           "size": "1280×800",
-          "status": "FAIL",
-          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
-          "evidence": []
+          "status": "PASS",
+          "summary": "Actual measured 1280×800 Chrome CSS viewport: recorded USD -1 refund, USD +1 contribution and zero current/available balance visible; screenshot visually reviewed.",
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-merged-refund/1280x800.png",
+              "label": "Cloud refund readback — 1280×800 measured CSS viewport"
+            }
+          ]
         },
         {
           "size": "1440×900",
-          "status": "FAIL",
-          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
-          "evidence": []
+          "status": "PASS",
+          "summary": "Actual measured 1440×900 Chrome CSS viewport: recorded USD -1 refund, USD +1 contribution and zero current/available balance visible; screenshot visually reviewed.",
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-merged-refund/1440x900.png",
+              "label": "Cloud refund readback — 1440×900 measured CSS viewport"
+            }
+          ]
         }
       ],
-      "evidence": [],
-      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
-      "limitations": "Read-only existing terminated record; no fresh termination or refund performed. This proves displayed grant-wallet inconsistency, not reconciliation of every underlying contributor wallet. Six screenshots typed-owner-wallet-* visually inspected. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
-      "sourceRun": "2026-09-14-retest45",
-      "resultSource": "typed-owner-results.json"
+      "evidence": [
+        {
+          "url": "assets/2026-09-14-merged-refund/360x800.png",
+          "label": "Cloud refund readback — 360×800 measured CSS viewport"
+        },
+        {
+          "url": "assets/2026-09-14-merged-refund/390x844.png",
+          "label": "Cloud refund readback — 390×844 measured CSS viewport"
+        },
+        {
+          "url": "assets/2026-09-14-merged-refund/768x1024.png",
+          "label": "Cloud refund readback — 768×1024 measured CSS viewport"
+        },
+        {
+          "url": "assets/2026-09-14-merged-refund/1024x768.png",
+          "label": "Cloud refund readback — 1024×768 measured CSS viewport"
+        },
+        {
+          "url": "assets/2026-09-14-merged-refund/1280x800.png",
+          "label": "Cloud refund readback — 1280×800 measured CSS viewport"
+        },
+        {
+          "url": "assets/2026-09-14-merged-refund/1440x900.png",
+          "label": "Cloud refund readback — 1440×900 measured CSS viewport"
+        }
+      ],
+      "evidencePublication": "APPROVED_SYNTHETIC_TEST_DATA",
+      "limitations": "Targeted correction of the original display defect only. No fresh termination, refund payment, all-contributor ledger reconciliation or global UX acceptance was performed. Existing cloud-origin Chrome zoom was calibrated to each exact innerWidth/innerHeight; screenshot physical pixels differ from CSS viewport dimensions. Initial uncalibrated images are excluded. Main browser owner visually reviewed all six published screenshots. Historical missing balances are not invented.",
+      "sourceRun": "2026-09-14-merged-refund-targeted",
+      "resultSource": "Main actual Chrome cloud retest after both live promotions"
     },
     {
       "id": "GRT021-REPORT-001",
@@ -550,8 +643,22 @@
   "browser": "Google Chrome",
   "frontend": "https://planar-truck-361704.uc.r.appspot.com",
   "api": "https://cicdevapi.uc.r.appspot.com",
-  "runId": "2026-09-14-retest45",
-  "state": "RETEST PARTIAL — all 45 dispositioned; incomplete workflows explicitly blocked or partial",
-  "updatedAt": "2026-09-14T07:08:29.535Z",
-  "scope": "Chrome-only targeted retest of the 45 originally unclosed critical/high defects. Dispositioned does not mean fully executed: blocked, partial and unexecuted viewport checks remain explicit. Historical campaign findings remain unchanged. Targeted PASS does not assert broader unexecuted lifecycle coverage."
+  "runId": "2026-09-14-merged-refund-targeted",
+  "state": "RETEST PARTIAL — one new merged-release cloud PASS; other prior outcomes retained",
+  "updatedAt": "2026-09-14T18:37:09.758Z",
+  "scope": "New cloud execution covers GRT020-BAL-001 only on the exact live release at all six measured Chrome CSS viewports. Other findings retain their previous sourceRun outcomes and are not newly accepted. This is not full-campaign closure.",
+  "deployments": {
+    "webapp": {
+      "version": "auth-34878846169-1",
+      "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "promotionRun": "34880983295",
+      "status": "LIVE"
+    },
+    "webapi": {
+      "version": "policy-34880209047-1",
+      "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+      "promotionRun": "34880842679",
+      "status": "LIVE"
+    }
+  }
 }
