@@ -1,0 +1,489 @@
+{
+  "findings": [
+    {
+      "id": "GRT002-SEARCH-001",
+      "title": "Exact visible-title search returns no result",
+      "status": "PASS",
+      "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PASS",
+          "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PASS",
+          "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PASS",
+          "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PASS",
+          "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PASS",
+          "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PASS",
+          "summary": "Invited Treop, owned Retest45 configuration and applied Demo grant each return the matching record. Partial title search works; a Unicode no-match query returns No grants found. Each resulting state was read and visually inspected at all six Chrome sizes.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Queries executed once per fixture and responsive results checked at each viewport; this is targeted search verification, not a complete grant lifecycle. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT003-VALID-001",
+      "title": "Blank grant step advances to publication controls",
+      "status": "FAIL",
+      "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "An entirely blank first step (title, amount and purpose omitted) advances with Next to Step 2 and enabled Publish at each of six Chrome sizes. No blank grant was published.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Original defect conclusively reproduced; additional boundary inputs do not negate the failed required-field gate. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT005-ANSWER-001",
+      "title": "Reviewers cannot see required custom answers",
+      "status": "PASS",
+      "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+      "steps": [
+        "Read documented alias credentials from local private fixture mapping without printing secrets.",
+        "Signed out Investor normally on isolated Assessor Chrome profile, leaving main Pitcher profile untouched.",
+        "Submitted existing documented owner credentials through normal deployed login form.",
+        "Application displayed Enter your email verification code, with Verify and Request a new code controls.",
+        "Captured actual MFA blocker, then completed normal verification using fresh mailbox verification provided by main agent. Verification code not retained in artifacts.",
+        "Opened Manage Grants > Terminated > owned PIT035 Typed Applicant Validation 20260911 > Applications (1), and expanded the synthetic application.",
+        "Observed every configured original question and answer: URL https://example.com/pit035; single choice Research, development & testing; multichoice Training, mentoring, Café 冷链 delivery; long text beginning PIT035 synthetic long response. Café 冷链 and ending END-PIT035-LONG.",
+        "Inspected all six Chrome sizes, saving and reviewing answer-heading and long-answer screenshots at each size. The application is not missing its four configured answer families. Narrow table content requires horizontal scrolling; long response clips at right edge at 360/390/768 in the default horizontal position.",
+        "Opened owner Grant Wallet and revealed controlled balance: Available USD1.00, Current USD1.00, pending disbursements0; only creator contribution +USD1.00, running balance USD1.00. No refund/release row. Header remains Grant Terminated.",
+        "Saved and visually inspected six wallet screenshots. Cleared viewport override, reloaded grant, reopened Wallet, and confirmed terminal status plus sole contribution/running balance USD1.00 persist."
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PASS",
+          "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PASS",
+          "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PASS",
+          "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PASS",
+          "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PASS",
+          "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PASS",
+          "summary": "Targeted missing-answer defect no longer reproduced: owner review renders all four original configured question/answer families, including URL, punctuation-bearing single choice, Unicode multichoice and complete long response. Inspected six Chrome sizes.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "PASS applies to persisted answer presence, not overall responsive UX. Separate layout issue: long-answer table content is horizontally clipped at 360/390/768 without horizontal scrolling. No fresh application submission performed; original existing synthetic values inspected. Screenshots typed-owner-answers-* and typed-owner-long-* contain fixture-only values. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "typed-owner-results.json"
+    },
+    {
+      "id": "GRT005-CFG-001",
+      "title": "Saved grant configuration changes on reload",
+      "status": "FAIL",
+      "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "Two private unfunded draft round-trips retain funding-stage Seed, group/public contributions, 2 grantors, calculated amount 5 and tracking configuration. Application deadlines shift back one day on reopen: pitch draft selected 2026-10-14 becomes 2026-10-13; individual draft 2026-10-13 becomes 2026-10-12. Six-size reopened editor readback confirms the drift; no edit resaved.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Original missing funding-stage/group flags no longer reproduced. Remaining configuration date drift and generic Details reporting copy are explicitly distinguished; no funding or publishing. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT007-LINK-001",
+      "title": "Application-review email link has invalid certificate",
+      "status": "PARTIAL",
+      "summary": "Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PARTIAL",
+          "summary": "Rendered state inspected: Opened the actual September 11 PIT035 Typed Applicant Validation application-review email. Its tracking link now reaches the correct HTTPS grant without a certificate warning at all six sizes. The grant is now permanently terminated, so review interaction is unavailable; this was historical-email replay, not a newly generated notification. No independent per-size workflow acceptance outcome supplied.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Fresh notification generation and intended owner's actionable review remain unverified. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT011-CLOSED-001",
+      "title": "Closed grant still presents Apply",
+      "status": "FAIL",
+      "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "Signed-out public page displays status closed and past deadline for controlled grant, yet Apply for this grant remains enabled at every size. Activation sends guest to login with apply=1 for that closed grant. No application submitted.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT017-REC-001",
+      "title": "Award receipt reverses sender and recipient",
+      "status": "PARTIAL",
+      "summary": "Exact existing grant award recipient HTML receipt passes all six sizes: grant sender and controlled Investor recipient populated, settled USD 100 gross/net and zero fees. Full grantor-side closure requires reconciliation with owner's view of this SAME award, not the contribution receipt.",
+      "steps": [
+        "Signed out normally from Assessor and signed into controlled Investor; no MFA required.",
+        "Opened Wallet and located the existing Funds received for grant approval award, not a grant contribution.",
+        "Opened the exact award row Receipt using the normal UI.",
+        "Inspected the rendered HTML receipt at all six Chrome viewport sizes. Sender, recipient and financial totals are populated and readable; no recipient N/A appears.",
+        "Saved and visually inspected all six private screenshots, then cleared the temporary viewport override."
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "PASS",
+          "summary": "Recipient-side existing award receipt: grant sender, controlled Investor recipient, settled USD 100 gross/net and zero fees. This cell does not verify owner-side reconciliation.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "PASS",
+          "summary": "Recipient-side existing award receipt: grant sender, controlled Investor recipient, settled USD 100 gross/net and zero fees. This cell does not verify owner-side reconciliation.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "PASS",
+          "summary": "Recipient-side existing award receipt: grant sender, controlled Investor recipient, settled USD 100 gross/net and zero fees. This cell does not verify owner-side reconciliation.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "PASS",
+          "summary": "Recipient-side existing award receipt: grant sender, controlled Investor recipient, settled USD 100 gross/net and zero fees. This cell does not verify owner-side reconciliation.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "PASS",
+          "summary": "Recipient-side existing award receipt: grant sender, controlled Investor recipient, settled USD 100 gross/net and zero fees. This cell does not verify owner-side reconciliation.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "PASS",
+          "summary": "Recipient-side existing award receipt: grant sender, controlled Investor recipient, settled USD 100 gross/net and zero fees. This cell does not verify owner-side reconciliation.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "This independent task inspected recipient side only. Parent owns the grantor-side same-award comparison. No PDF download or fresh disbursement was executed. Screenshots remain private because wallet background can contain unrelated ledger entries. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "receipt-results.json"
+    },
+    {
+      "id": "GRT020-BAL-001",
+      "title": "Refunded terminated grant retains a nonzero balance",
+      "status": "FAIL",
+      "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+      "steps": [
+        "Read documented alias credentials from local private fixture mapping without printing secrets.",
+        "Signed out Investor normally on isolated Assessor Chrome profile, leaving main Pitcher profile untouched.",
+        "Submitted existing documented owner credentials through normal deployed login form.",
+        "Application displayed Enter your email verification code, with Verify and Request a new code controls.",
+        "Captured actual MFA blocker, then completed normal verification using fresh mailbox verification provided by main agent. Verification code not retained in artifacts.",
+        "Opened Manage Grants > Terminated > owned PIT035 Typed Applicant Validation 20260911 > Applications (1), and expanded the synthetic application.",
+        "Observed every configured original question and answer: URL https://example.com/pit035; single choice Research, development & testing; multichoice Training, mentoring, Café 冷链 delivery; long text beginning PIT035 synthetic long response. Café 冷链 and ending END-PIT035-LONG.",
+        "Inspected all six Chrome sizes, saving and reviewing answer-heading and long-answer screenshots at each size. The application is not missing its four configured answer families. Narrow table content requires horizontal scrolling; long response clips at right edge at 360/390/768 in the default horizontal position.",
+        "Opened owner Grant Wallet and revealed controlled balance: Available USD1.00, Current USD1.00, pending disbursements0; only creator contribution +USD1.00, running balance USD1.00. No refund/release row. Header remains Grant Terminated.",
+        "Saved and visually inspected six wallet screenshots. Cleared viewport override, reloaded grant, reopened Wallet, and confirmed terminal status plus sole contribution/running balance USD1.00 persist."
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "Exact terminated owned grant still shows Available and Current USD1.00 with pending disbursements0 and sole creator contribution USD1.00; no refund/release ledger entry. Same terminal balance inconsistency reproduced on six Chrome sizes and persisted after refresh.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Read-only existing terminated record; no fresh termination or refund performed. This proves displayed grant-wallet inconsistency, not reconciliation of every underlying contributor wallet. Six screenshots typed-owner-wallet-* visually inspected. Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "typed-owner-results.json"
+    },
+    {
+      "id": "GRT021-REPORT-001",
+      "title": "Grant views invent contradictory reporting obligations",
+      "status": "FAIL",
+      "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+      "steps": [],
+      "responsive": [
+        {
+          "size": "360×800",
+          "status": "FAIL",
+          "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+          "evidence": []
+        },
+        {
+          "size": "390×844",
+          "status": "FAIL",
+          "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+          "evidence": []
+        },
+        {
+          "size": "768×1024",
+          "status": "FAIL",
+          "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1024×768",
+          "status": "FAIL",
+          "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1280×800",
+          "status": "FAIL",
+          "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+          "evidence": []
+        },
+        {
+          "size": "1440×900",
+          "status": "FAIL",
+          "summary": "Closed controlled grant UAT Guest Privacy 202608190454 shows Tracking Enabled No, Reporting Required No, Settings Inactive in Details, while Overview states monthly schedule is active and Reporting cadence is current. Contradiction verified at all six sizes.",
+          "evidence": []
+        }
+      ],
+      "evidence": [],
+      "evidencePublication": "WITHHELD_PRIVACY_REVIEW",
+      "limitations": "Evidence withheld pending explicit public-asset review. Private document captures, signed links and local paths are never copied automatically.",
+      "sourceRun": "2026-09-14-retest45",
+      "resultSource": "results.json"
+    }
+  ],
+  "browser": "Google Chrome",
+  "frontend": "https://planar-truck-361704.uc.r.appspot.com",
+  "api": "https://cicdevapi.uc.r.appspot.com",
+  "runId": "2026-09-14-retest45",
+  "state": "RETEST PARTIAL — all 45 dispositioned; incomplete workflows explicitly blocked or partial",
+  "updatedAt": "2026-09-14T07:08:29.535Z",
+  "scope": "Chrome-only targeted retest of the 45 originally unclosed critical/high defects. Dispositioned does not mean fully executed: blocked, partial and unexecuted viewport checks remain explicit. Historical campaign findings remain unchanged. Targeted PASS does not assert broader unexecuted lifecycle coverage."
+}
