@@ -1,0 +1,511 @@
+{
+  "repairBatch": {
+    "runId": "2026-09-14-merged-deployed-repair",
+    "state": "MERGED AND LIVE — targeted cloud verification progressing",
+    "executionMode": "cloud",
+    "browser": "Google Chrome",
+    "sizes": [
+      "360×800",
+      "390×844",
+      "768×1024",
+      "1024×768",
+      "1280×800",
+      "1440×900"
+    ],
+    "mergeStatus": "MERGED",
+    "deploymentStatus": "LIVE",
+    "cloudRetestStatus": "PARTIAL",
+    "frontendTests": "Final candidate: 632 suites / 4,943 tests passed; production build passed. Final original-refund real-API Chrome check passed at all six exact sizes.",
+    "apiTests": "Prior complete reconciliation: 468 suites / 5,565 assertions passed; latest API base and refund delta: 5 suites / 82 assertions passed. Separate runs, not one new full-suite execution.",
+    "scope": "Readiness update only. Existing deployed findings and per-size results below remain the last published cloud outcomes until exact-release browser retesting is supplied.",
+    "findings": [
+      {
+        "id": "GRT003-VALID-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      },
+      {
+        "id": "GRT005-CFG-001",
+        "classification": "PRODUCT_FIX_LOCAL_VERIFIED",
+        "summary": "Changed behavior passed focused regression and real API-backed Chrome local checks at all six measured sizes.",
+        "cloudRetestStatus": "PENDING"
+      },
+      {
+        "id": "GRT011-CLOSED-001",
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "Original closed grant fresh reload at all six exact CSS sizes shows disabled Applications Closed and no application dialog for guest and normally signed-in nonowner Investor, using Pitcher Chrome. Main reviewed six guest images; register agent reviewed six nonowner images. Targeted original closed-Apply defect only, not contribution or full grant lifecycle certification.",
+        "cloudRetestStatus": "PASS"
+      },
+      {
+        "id": "GRT020-BAL-001",
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "GRT020-BAL-001 PASS: original terminated grant shows its existing USD -1 refund, USD +1 contribution and zero available/current balance after reload. Six exact measured Chrome CSS viewports passed. No fresh financial transaction was executed; other cloud retests are pending.",
+        "cloudRetestStatus": "PASS"
+      },
+      {
+        "id": "GRT021-REPORT-001",
+        "classification": "PRODUCT_FIX_CLOUD_VERIFIED",
+        "summary": "Original owned closed grant Details and Overview exercised at all six measured CSS sizes. Fresh scrolled screenshots show Tracking Enabled No / Reporting Required No / Settings Inactive agreeing with Reporting disabled / No recurring reporting obligations. Old cadence-current absent. All twelve visible reporting screenshots independently visually reviewed. Targeted original reporting contradiction PASS, not financial reconciliation or full grant suite.",
+        "cloudRetestStatus": "PASS"
+      }
+    ],
+    "updatedAt": "2026-09-14T20:24:10.030Z",
+    "candidates": {
+      "webapp": "b99da21cf757593a3f5419086022556b7965e9b3",
+      "webapi": "f11aba9330b84ee98e0e7f3188a2442b928e4aad"
+    },
+    "pullRequests": [
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/pull/2342",
+        "label": "Frontend PR #2342 — merged"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/pull/737",
+        "label": "API PR #737 — merged after review corrections"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapp/actions/runs/34880983295",
+        "label": "Frontend live promotion — success"
+      },
+      {
+        "url": "https://github.com/capitalinvestmentclub/webapi/actions/runs/34880842679",
+        "label": "API live promotion — success"
+      }
+    ],
+    "releaseGate": "Recorded merge commits are live. Cloud closure below is limited to explicit targeted results with six measured CSS viewport outcomes; merged code alone never closes other findings.",
+    "mergeCommits": {
+      "webapp": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "webapi": "a86720f026956fa9a9e76e3f4bb23e5e02af445d"
+    },
+    "stagedDeployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "workflow": "34878846169",
+        "status": "SUCCESS"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "workflow": "34880209047",
+        "status": "SUCCESS",
+        "policyParityMatched": true
+      }
+    },
+    "apiReviewDelta": "Final review corrections: 44 controller assertions and 66 organization assertions passed; three required API checks passed and zero unresolved review threads.",
+    "deployments": {
+      "webapp": {
+        "version": "auth-34878846169-1",
+        "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+        "promotionRun": "34880983295",
+        "status": "LIVE"
+      },
+      "webapi": {
+        "version": "policy-34880209047-1",
+        "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+        "promotionRun": "34880842679",
+        "status": "LIVE"
+      },
+      "buildId": "yU2MSQuhYYpfh4uHJUpxd",
+      "verifiedBy": "/root"
+    },
+    "cloudRetestSummary": "Latest targeted batch 2026-09-14-close37-grant-verified: GRT011-CLOSED-001 PASS, GRT021-REPORT-001 PASS. Other findings retain prior evidence; this is not full-scenario closure."
+  },
+  "findings": [
+    {
+      "id": "GRT011-CLOSED-001",
+      "title": "Closed grant still presents Apply",
+      "status": "PASS",
+      "summary": "Original closed grant fresh reload at all six exact CSS sizes shows disabled Applications Closed and no application dialog for guest and normally signed-in nonowner Investor, using Pitcher Chrome. Main reviewed six guest images; register agent reviewed six nonowner images. Targeted original closed-Apply defect only, not contribution or full grant lifecycle certification.",
+      "steps": [
+        "Reload closed grant signed out",
+        "Verify disabled Applications Closed",
+        "Verify no application dialog",
+        "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "measuredCss": "360x800",
+          "status": "PASS",
+          "summary": "Reload closed grant signed out; Verify disabled Applications Closed; Verify no application dialog; Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog. PASS main guest and register nonowner screenshot review; synthetic public content only",
+          "steps": [
+            "Reload closed grant signed out",
+            "Verify disabled Applications Closed",
+            "Verify no application dialog",
+            "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-360x800.png",
+              "label": "GRT011-guest-360x800"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-360x800.png",
+              "label": "GRT011-nonowner-360x800"
+            }
+          ],
+          "observedAt": "2026-09-14T20:10:15.922Z"
+        },
+        {
+          "size": "390×844",
+          "measuredCss": "390x844",
+          "status": "PASS",
+          "summary": "Reload closed grant signed out; Verify disabled Applications Closed; Verify no application dialog; Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog. PASS main guest and register nonowner screenshot review; synthetic public content only",
+          "steps": [
+            "Reload closed grant signed out",
+            "Verify disabled Applications Closed",
+            "Verify no application dialog",
+            "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-390x844.png",
+              "label": "GRT011-guest-390x844"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-390x844.png",
+              "label": "GRT011-nonowner-390x844"
+            }
+          ],
+          "observedAt": "2026-09-14T20:10:15.922Z"
+        },
+        {
+          "size": "768×1024",
+          "measuredCss": "768x1024",
+          "status": "PASS",
+          "summary": "Reload closed grant signed out; Verify disabled Applications Closed; Verify no application dialog; Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog. PASS main guest and register nonowner screenshot review; synthetic public content only",
+          "steps": [
+            "Reload closed grant signed out",
+            "Verify disabled Applications Closed",
+            "Verify no application dialog",
+            "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-768x1024.png",
+              "label": "GRT011-guest-768x1024"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-768x1024.png",
+              "label": "GRT011-nonowner-768x1024"
+            }
+          ],
+          "observedAt": "2026-09-14T20:10:15.922Z"
+        },
+        {
+          "size": "1024×768",
+          "measuredCss": "1024x768",
+          "status": "PASS",
+          "summary": "Reload closed grant signed out; Verify disabled Applications Closed; Verify no application dialog; Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog. PASS main guest and register nonowner screenshot review; synthetic public content only",
+          "steps": [
+            "Reload closed grant signed out",
+            "Verify disabled Applications Closed",
+            "Verify no application dialog",
+            "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-1024x768.png",
+              "label": "GRT011-guest-1024x768"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-1024x768.png",
+              "label": "GRT011-nonowner-1024x768"
+            }
+          ],
+          "observedAt": "2026-09-14T20:10:15.922Z"
+        },
+        {
+          "size": "1280×800",
+          "measuredCss": "1280x800",
+          "status": "PASS",
+          "summary": "Reload closed grant signed out; Verify disabled Applications Closed; Verify no application dialog; Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog. PASS main guest and register nonowner screenshot review; synthetic public content only",
+          "steps": [
+            "Reload closed grant signed out",
+            "Verify disabled Applications Closed",
+            "Verify no application dialog",
+            "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-1280x800.png",
+              "label": "GRT011-guest-1280x800"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-1280x800.png",
+              "label": "GRT011-nonowner-1280x800"
+            }
+          ],
+          "observedAt": "2026-09-14T20:10:15.922Z"
+        },
+        {
+          "size": "1440×900",
+          "measuredCss": "1440x900",
+          "status": "PASS",
+          "summary": "Reload closed grant signed out; Verify disabled Applications Closed; Verify no application dialog; Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog. PASS main guest and register nonowner screenshot review; synthetic public content only",
+          "steps": [
+            "Reload closed grant signed out",
+            "Verify disabled Applications Closed",
+            "Verify no application dialog",
+            "Normal Investor login, fresh closed grant reload and confirm Applications Closed disabled without application dialog"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-1440x900.png",
+              "label": "GRT011-guest-1440x900"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-1440x900.png",
+              "label": "GRT011-nonowner-1440x900"
+            }
+          ],
+          "observedAt": "2026-09-14T20:10:15.922Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-360x800.png",
+          "label": "GRT011-guest-360x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-360x800.png",
+          "label": "GRT011-nonowner-360x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-390x844.png",
+          "label": "GRT011-guest-390x844"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-390x844.png",
+          "label": "GRT011-nonowner-390x844"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-768x1024.png",
+          "label": "GRT011-guest-768x1024"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-768x1024.png",
+          "label": "GRT011-nonowner-768x1024"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-1024x768.png",
+          "label": "GRT011-guest-1024x768"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-1024x768.png",
+          "label": "GRT011-nonowner-1024x768"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-1280x800.png",
+          "label": "GRT011-guest-1280x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-1280x800.png",
+          "label": "GRT011-nonowner-1280x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-guest-1440x900.png",
+          "label": "GRT011-guest-1440x900"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT011-nonowner-1440x900.png",
+          "label": "GRT011-nonowner-1440x900"
+        }
+      ],
+      "evidencePublication": "APPROVED_PUBLIC_EVIDENCE",
+      "limitations": "Two targeted original grant defects only; no full grant suite or financial movement certification. Other outcomes preserved.",
+      "sourceRun": "2026-09-14-close37-grant-verified",
+      "resultSource": "results.json"
+    },
+    {
+      "id": "GRT021-REPORT-001",
+      "title": "Grant views invent contradictory reporting obligations",
+      "status": "PASS",
+      "summary": "Original owned closed grant Details and Overview exercised at all six measured CSS sizes. Fresh scrolled screenshots show Tracking Enabled No / Reporting Required No / Settings Inactive agreeing with Reporting disabled / No recurring reporting obligations. Old cadence-current absent. All twelve visible reporting screenshots independently visually reviewed. Targeted original reporting contradiction PASS, not financial reconciliation or full grant suite.",
+      "steps": [
+        "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+        "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+        "Scroll reporting paragraph into actual viewport and visually inspect text"
+      ],
+      "responsive": [
+        {
+          "size": "360×800",
+          "measuredCss": "360x800",
+          "status": "PASS",
+          "summary": "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive; Open Overview and check Reporting disabled / no recurring obligations / no cadence-current; Scroll reporting paragraph into actual viewport and visually inspect text. PASS: visible disabled reporting and no recurring obligations",
+          "steps": [
+            "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+            "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+            "Scroll reporting paragraph into actual viewport and visually inspect text"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-details-360x800.png",
+              "label": "GRT021-visible-details-360x800"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-360x800.png",
+              "label": "GRT021-visible-overview-360x800"
+            }
+          ],
+          "observedAt": "2026-09-14T20:20:11.098Z"
+        },
+        {
+          "size": "390×844",
+          "measuredCss": "390x844",
+          "status": "PASS",
+          "summary": "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive; Open Overview and check Reporting disabled / no recurring obligations / no cadence-current; Scroll reporting paragraph into actual viewport and visually inspect text. PASS: visible disabled reporting and no recurring obligations",
+          "steps": [
+            "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+            "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+            "Scroll reporting paragraph into actual viewport and visually inspect text"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-details-390x844.png",
+              "label": "GRT021-visible-details-390x844"
+            },
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-390x844.png",
+              "label": "GRT021-visible-overview-390x844"
+            }
+          ],
+          "observedAt": "2026-09-14T20:20:11.098Z"
+        },
+        {
+          "size": "768×1024",
+          "measuredCss": "768x1024",
+          "status": "PASS",
+          "summary": "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive; Open Overview and check Reporting disabled / no recurring obligations / no cadence-current; Scroll reporting paragraph into actual viewport and visually inspect text. PASS: visible disabled reporting and no recurring obligations",
+          "steps": [
+            "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+            "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+            "Scroll reporting paragraph into actual viewport and visually inspect text"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-768x1024.png",
+              "label": "GRT021-visible-overview-768x1024"
+            }
+          ],
+          "observedAt": "2026-09-14T20:20:11.098Z"
+        },
+        {
+          "size": "1024×768",
+          "measuredCss": "1024x768",
+          "status": "PASS",
+          "summary": "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive; Open Overview and check Reporting disabled / no recurring obligations / no cadence-current; Scroll reporting paragraph into actual viewport and visually inspect text. PASS: visible disabled reporting and no recurring obligations",
+          "steps": [
+            "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+            "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+            "Scroll reporting paragraph into actual viewport and visually inspect text"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-1024x768.png",
+              "label": "GRT021-visible-overview-1024x768"
+            }
+          ],
+          "observedAt": "2026-09-14T20:20:11.098Z"
+        },
+        {
+          "size": "1280×800",
+          "measuredCss": "1280x800",
+          "status": "PASS",
+          "summary": "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive; Open Overview and check Reporting disabled / no recurring obligations / no cadence-current; Scroll reporting paragraph into actual viewport and visually inspect text. PASS: visible disabled reporting and no recurring obligations",
+          "steps": [
+            "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+            "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+            "Scroll reporting paragraph into actual viewport and visually inspect text"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-1280x800.png",
+              "label": "GRT021-visible-overview-1280x800"
+            }
+          ],
+          "observedAt": "2026-09-14T20:20:11.098Z"
+        },
+        {
+          "size": "1440×900",
+          "measuredCss": "1440x900",
+          "status": "PASS",
+          "summary": "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive; Open Overview and check Reporting disabled / no recurring obligations / no cadence-current; Scroll reporting paragraph into actual viewport and visually inspect text. PASS: visible disabled reporting and no recurring obligations",
+          "steps": [
+            "Open Details and check Tracking Enabled No / Reporting Required No / Settings Inactive",
+            "Open Overview and check Reporting disabled / no recurring obligations / no cadence-current",
+            "Scroll reporting paragraph into actual viewport and visually inspect text"
+          ],
+          "evidence": [
+            {
+              "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-1440x900.png",
+              "label": "GRT021-visible-overview-1440x900"
+            }
+          ],
+          "observedAt": "2026-09-14T20:20:11.098Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-details-360x800.png",
+          "label": "GRT021-visible-details-360x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-360x800.png",
+          "label": "GRT021-visible-overview-360x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-details-390x844.png",
+          "label": "GRT021-visible-details-390x844"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-390x844.png",
+          "label": "GRT021-visible-overview-390x844"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-768x1024.png",
+          "label": "GRT021-visible-overview-768x1024"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-1024x768.png",
+          "label": "GRT021-visible-overview-1024x768"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-1280x800.png",
+          "label": "GRT021-visible-overview-1280x800"
+        },
+        {
+          "url": "assets/2026-09-14-close37-grant-verified/GRT021-visible-overview-1440x900.png",
+          "label": "GRT021-visible-overview-1440x900"
+        }
+      ],
+      "evidencePublication": "APPROVED_PUBLIC_EVIDENCE",
+      "limitations": "Two targeted original grant defects only; no full grant suite or financial movement certification. Other outcomes preserved.",
+      "sourceRun": "2026-09-14-close37-grant-verified",
+      "resultSource": "results.json"
+    }
+  ],
+  "browser": "Google Chrome",
+  "frontend": "https://planar-truck-361704.uc.r.appspot.com",
+  "api": "https://cicdevapi.uc.r.appspot.com",
+  "runId": "2026-09-14-close37-grant-verified",
+  "state": "RETEST PARTIAL — completed targeted batch published; remaining findings retain their latest recorded outcomes",
+  "updatedAt": "2026-09-14T20:24:10.030Z",
+  "scope": "Chrome-only targeted defect acceptance on the recorded deployed versions. New results are limited to explicitly supplied findings and six measured CSS sizes. Historical scenarios and unexecuted lifecycle branches are not promoted to PASS.",
+  "deployments": {
+    "webapp": {
+      "version": "auth-34878846169-1",
+      "commit": "2a16bad104bdbd0c2319523ddc5f145af420c1d4",
+      "promotionRun": "34880983295",
+      "status": "LIVE"
+    },
+    "webapi": {
+      "version": "policy-34880209047-1",
+      "commit": "a86720f026956fa9a9e76e3f4bb23e5e02af445d",
+      "promotionRun": "34880842679",
+      "status": "LIVE"
+    }
+  }
+}
